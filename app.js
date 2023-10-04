@@ -5,7 +5,7 @@ const img3 = document.getElementById("img3");
 let userClicks = 0;
 let maxClicks = 25;
 
-function Object(name, src) {
+function Product(name, src) {
   this.name = name;
   this.src = src;
   this.views = 0;
@@ -17,25 +17,25 @@ function getRandomIndex() {
 }
 
 const allObjects = [
-  new Object("Bag", "./img/bag.jpg"),
-  new Object("Banana", "./img/banana.jpg"),
-  new Object("Bathroom", "./img/bag.jpg"),
-  new Object("Boots", "./img/boots.jpg"),
-  new Object("Breakfast", "./img/breakfast.jpg"),
-  new Object("Bubblegum", "./img/bubblegum.jpg"),
-  new Object("Chair", "./img/chair.jpg"),
-  new Object("Cthulhu", "./img/bag.jpg"),
-  new Object("Dog Duck", "./img/dog-duck.jpg"),
-  new Object("Dragon", "./img/dragon.jpg"),
-  new Object("Pen", "./img/pen.jpg"),
-  new Object("Pet Sweep", "./img/pet-sweep.jpg"),
-  new Object("Scissors", "./img/scissors.jpg"),
-  new Object("Shark", "./img/shark.jpg"),
-  new Object("Sweep", "./img/sweep.jpg"),
-  new Object("TaunTaun", "./img/tauntaun.jpg"),
-  new Object("Unicorn", "./img/unicorn.jpg"),
-  new Object("Water Can", "./img/water-can.jpg"),
-  new Object("Wine Glass", "./img/wine-glass.jpg"),
+  new Product("Bag", "./img/bag.jpg"),
+  new Product("Banana", "./img/banana.jpg"),
+  new Product("Bathroom", "./img/bag.jpg"),
+  new Product("Boots", "./img/boots.jpg"),
+  new Product("Breakfast", "./img/breakfast.jpg"),
+  new Product("Bubblegum", "./img/bubblegum.jpg"),
+  new Product("Chair", "./img/chair.jpg"),
+  new Product("Cthulhu", "./img/bag.jpg"),
+  new Product("Dog Duck", "./img/dog-duck.jpg"),
+  new Product("Dragon", "./img/dragon.jpg"),
+  new Product("Pen", "./img/pen.jpg"),
+  new Product("Pet Sweep", "./img/pet-sweep.jpg"),
+  new Product("Scissors", "./img/scissors.jpg"),
+  new Product("Shark", "./img/shark.jpg"),
+  new Product("Sweep", "./img/sweep.jpg"),
+  new Product("TaunTaun", "./img/tauntaun.jpg"),
+  new Product("Unicorn", "./img/unicorn.jpg"),
+  new Product("Water Can", "./img/water-can.jpg"),
+  new Product("Wine Glass", "./img/wine-glass.jpg"),
 ];
 
 function renderObjects() {
@@ -69,9 +69,7 @@ function renderObjects() {
 }
 
 function handleImgClick(event) {
-  console.log("hello");
-
-  if (userClicks === maxClicks) {
+  if (userClicks >= maxClicks) {
     alert("you have run out of votes");
     renderChart();
     return;
@@ -117,7 +115,7 @@ function renderChart() {
   const views = [];
   const clicks = [];
 
-  for (let i = 0; i > allObjects.length; i++) {
+  for (let i = 0; i < allObjects.length; i++) {
     labels.push(allObjects[i].name);
     views.push(allObjects[i].views);
     clicks.push(allObjects[i].clicks);
